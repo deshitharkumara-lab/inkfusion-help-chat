@@ -56,7 +56,7 @@ safety: "Keep the printer ON for cleaning. Wear gloves."
 steps:                             # the agent sends ONE step per message
   - text: "Print a nozzle check."
     media: nozzle-check.mp4        # optional: photo or video (file name or YouTube link)
-max_attempts_before_escalation: 3  # how many times the customer may repeat the steps before the agent escalates
+max_attempts_before_escalation: 3  # how many failed tries of the main fix (e.g. normal cleanings) before the agent escalates
 escalate_if:                       # escalate straight away if any of these happen
   - "Ink leaking"
 prevention_tip: "Print a nozzle check every morning."

@@ -3,19 +3,23 @@ machine: dtf
 problem: White ink clogging / weak or missing white layer
 safety: "Keep the printer ON. Wear gloves. Do not open the ink lines or the head."
 steps:
-  - text: "Check that the white ink circulation or stirring is switched on. (On most DTF printers it runs automatically.)"
-  - text: "Gently shake or stir the white ink tank or bottle, as your machine allows. White ink settles quickly."
+  - text: "Check that white ink circulation is switched ON on the printer."
+  - text: "Before refilling, shake the white ink bottle well. White ink settles quickly."
   - text: "Print a nozzle check and look at the white channel. Send a photo if you can."
-  - text: "If white lines are missing, run 1 normal head cleaning for the white channel."
-  - text: "Print the nozzle check again."
+  - text: "Run 1 normal head cleaning for the white channel, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
+  - text: "Still missing? Clean the capping station and wiper (see the head clogging video)."
+    media: capping-station-cleaning-dtf   # owner: add video link
+  - text: "Run 1 power (strong) cleaning. Only do this once. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
+  - "Still missing after the power/strong cleaning"
   - "White still missing after 3 cleanings"
   - "The white circulation pump is not running or makes a noise"
   - "Ink is leaking"
   - "A head error code is shown"
-prevention_tip: "Shake or stir the white ink every day before printing, and keep white circulation switched on, even when the printer is not in use."
+prevention_tip: "Shake the white ink bottle before every refill, and keep white circulation switched on, even when the printer is not in use."
 status: draft
 owner_check:
-  - "Do your DTF printers have automatic white ink circulation? How does the customer check it is running?"
-  - "Should customers shake the white ink bottle, stir the tank, or both?"
+  - "How does a customer check that white circulation is ON on your DTF models (light, menu, sound)?"
+  - "Which cleaning solution should customers use for the capping station and wiper? (Name it, or say 'iNK Fusion cleaning solution'.)"
+  - "Please send the capping station cleaning video (unlisted YouTube link) for this machine type."

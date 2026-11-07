@@ -5,12 +5,14 @@ safety: "Keep the printer ON for cleaning. Wear gloves. Keep ink away from eyes 
 steps:
   - text: "Print a nozzle check from your printer software."
   - text: "Look at the nozzle check. Are any lines missing or broken? Send a photo if you can."
-  - text: "If lines are missing, run 1 normal head cleaning from the software."
-  - text: "Wait 2 minutes. Then print the nozzle check again."
-  - text: "Still missing lines? Run 1 more normal head cleaning, then print the nozzle check again."
   - text: "Check the ink tanks. Make sure every colour has ink and no tube is empty or has big air bubbles."
+  - text: "Run 1 normal head cleaning from the software. Wait 2 minutes, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
+  - text: "Still missing? Clean the capping station and wiper. Use the software's move-carriage option to move the head aside. Never push the head by hand. Watch the video first."
+    media: capping-station-cleaning-dtf   # owner: add video link
+  - text: "Run 1 power (strong) cleaning. Only do this once. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
+  - "Still missing after the power/strong cleaning"
   - "No ink comes out after 3 cleanings"
   - "Ink is leaking from the head or tubes"
   - "A head error code is shown"
@@ -18,5 +20,5 @@ escalate_if:
 prevention_tip: "Print a nozzle check every morning. Keep the printer switched on, or print a small test daily so the ink keeps moving."
 status: draft
 owner_check:
-  - "Is 3 normal cleanings the right limit for your DTF models before calling a technician?"
-  - "Do you want customers to try a 'strong/power' cleaning, or should only a technician do that?"
+  - "Which cleaning solution should customers use for the capping station and wiper? (Name it, or say 'iNK Fusion cleaning solution'.)"
+  - "Please send the capping station cleaning video (unlisted YouTube link) for this machine type."

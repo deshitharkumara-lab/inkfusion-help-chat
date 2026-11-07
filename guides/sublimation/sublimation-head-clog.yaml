@@ -7,12 +7,14 @@ safety: "Keep the printer ON. Wear gloves. Keep hands away from the moving head.
 steps:
   - text: "Print a nozzle check (test print) from the printer panel or the software."
   - text: "Look at the pattern. Are any lines missing? Send a photo if you can."
-  - text: "If lines are missing, run 1 normal cleaning from the panel or software."
-  - text: "Print the nozzle check again."
-  - text: "Still missing? Run 1 more normal cleaning and check again."
   - text: "Check the ink tanks are full and the ink tubes have no big air gaps."
+  - text: "Run 1 normal cleaning, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
+  - text: "Still missing? Clean the capping station and wiper. Use the panel's move-carriage option. Never push the head by hand. Watch the video first."
+    media: capping-station-cleaning-sublimation   # owner: add video link
+  - text: "Run 1 power (strong) cleaning. Only do this once. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
+  - "Still missing after the power/strong cleaning"
   - "Still missing after 3 cleanings"
   - "Ink leaking"
   - "Head error code on the panel"
@@ -20,4 +22,5 @@ escalate_if:
 prevention_tip: "Print a nozzle check every morning and do not leave the printer switched off for days."
 status: draft
 owner_check:
-  - "Should customers clean the capping station / wiper with a swab and cleaning solution? If yes, which steps and solution?"
+  - "Which cleaning solution should customers use for the capping station and wiper? (Name it, or say 'iNK Fusion cleaning solution'.)"
+  - "Please send the capping station cleaning video (unlisted YouTube link) for this machine type."

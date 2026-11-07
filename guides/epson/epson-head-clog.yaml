@@ -8,17 +8,19 @@ safety: "Keep the printer ON. Wear gloves when handling ink."
 steps:
   - text: "Print a nozzle check (Epson printer settings > Maintenance > Nozzle Check)."
   - text: "Look at the pattern. Are any lines missing? Send a photo if you can."
-  - text: "If lines are missing, run 1 Head Cleaning."
-  - text: "Wait 5 minutes, then print the nozzle check again."
-  - text: "Still missing? Run 1 more Head Cleaning and wait 5 minutes."
   - text: "Check all ink tanks have ink above the lower line."
+  - text: "Run 1 Head Cleaning. Wait 5 minutes, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
+  - text: "Still missing? Clean the capping station and wiper. Watch the video first."
+    media: capping-station-cleaning-epson   # owner: add video link
+  - text: "If your model has Power Cleaning, run it once only. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
+  - "Still missing after the power/strong cleaning"
   - "Still missing after 3 cleanings"
   - "Message about 'ink pad' or 'parts at end of service life'"
   - "Ink leaking inside the printer"
 prevention_tip: "Print at least one page or a nozzle check every 2–3 days. Sublimation ink dries faster, so print daily."
 status: draft
 owner_check:
-  - "Should customers use 'Power Cleaning' (if their model has it), or only a technician? It uses a lot of ink and fills the waste pad."
-  - "Is 3 cleanings the right limit?"
+  - "Which cleaning solution should customers use for the capping station and wiper? (Name it, or say 'iNK Fusion cleaning solution'.)"
+  - "Please send the capping station cleaning video (unlisted YouTube link) for this machine type."
