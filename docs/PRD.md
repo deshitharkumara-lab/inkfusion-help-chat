@@ -167,7 +167,7 @@ Each technician request is saved in the D1 database **and** sent as a **WhatsApp
   - rate limits per device/IP (Cloudflare rate limiting)
   - a **daily cap of USD 2** on AI calls; when the cap is reached, the agent shows the call / technician options instead
   - **Cloudflare Turnstile** (a free, invisible bot check) on the chat and the technician form
-- **Privacy:** customer phone numbers and photos are stored privately (private R2 bucket, admin-only access). Chat logs and photos are **not** auto-deleted after 12 months; the final retention period is to be confirmed (section 15). Show a short privacy note.
+- **Privacy:** customer phone numbers and photos are stored privately (private R2 bucket, admin-only access). Chat logs and photos are deleted after **24 months** by a scheduled daily clean-up job. Show a short privacy note that says so.
 - **Reliability:** if the AI service is down, show the "Call iNK Fusion" / "Request technician" options.
 - **Easy updates:** the owner can add new manuals, videos and fix guides without changing code.
 - **Secrets:** API keys are stored only as Cloudflare secrets, **never in GitHub**.
@@ -200,7 +200,7 @@ Each technician request is saved in the D1 database **and** sent as a **WhatsApp
 
 | Phase | Deliverable |
 |---|---|
-| 0 | Setup: GitHub repo, Cloudflare account, Anthropic API key, Meta WhatsApp Business setup |
+| 0 | Setup: GitHub repo (done), Cloudflare account, Anthropic API key, Meta WhatsApp Business setup, all owned by deshitharkumara@gmail.com |
 | 1 | Claude drafts the fix-guide library → owner reviews and approves |
 | 2 | Chat page on Cloudflare: language matching, machine/problem selection, step-by-step guidance from approved guides |
 | 3 | PDF manual indexing + photo upload + video display |
@@ -237,8 +237,7 @@ Each technician request is saved in the D1 database **and** sent as a **WhatsApp
 - Daily AI budget: **USD 2/day**. When it is reached, the agent shows only the call / technician options until the next day (Asia/Colombo).
 - Admin email: **deshitharkumara@gmail.com**
 - WhatsApp alert sender number: **076 187 0890 (+94761870890)**, registered on the WhatsApp Business Cloud API. Alerts go to 076 868 0890.
-- Data retention: chat logs and photos are **not** deleted after 12 months.
+- Data retention: chat logs and photos are deleted after **24 months**.
+- Account owner (Cloudflare, Anthropic, Meta): **deshitharkumara@gmail.com**
 
-**Still open:**
-1. **Data retention:** keep chat logs and photos forever, or delete them after a different period?
-2. **Accounts:** who will own the Cloudflare, Anthropic and Meta accounts? (Recommended: an iNK Fusion company email.)
+**No open questions.** Ready for owner approval.
