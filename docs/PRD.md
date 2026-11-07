@@ -10,7 +10,8 @@
 ### Changes from v0.1 (v0.2, approved as v1.0)
 - Hosting moved from Vercel to **Cloudflare**. Database and storage moved from Supabase to **Cloudflare D1, R2 and Vectorize**.
 - Added **section 12.1, "Code & Deployment (GitHub + Cloudflare)"**.
-- Admin login now uses **Cloudflare Access** instead of a home-made password.
+- Admin login uses a password, with **Cloudflare Access** as an optional extra lock.
+- Web app built with Hono on Cloudflare Workers instead of Next.js (approved 7 Nov 2026).
 - The WhatsApp alert now uses the **WhatsApp Business Cloud API** (confirmed).
 - Added **Phase 0 (accounts & setup)** to the milestones.
 - Added new open questions in section 15.
@@ -154,7 +155,7 @@ Each technician request is saved in the D1 database **and** sent as a **WhatsApp
 
 ## 10. Admin (simple, v1)
 
-- An admin page protected by **Cloudflare Access** (free; the owner logs in with an email one-time code, and only approved email addresses can enter; v1 allows **deshitharkumara@gmail.com** only). It:
+- An admin page protected by an admin password, with **Cloudflare Access** recommended as an extra lock (free; the owner logs in with an email one-time code, and only approved email addresses can enter; v1 allows **deshitharkumara@gmail.com** only). It:
   - Lists technician requests (date, customer, phone, machine, problem, photo, chat transcript) with status: New / Contacted / Done
   - Lists fix guides with Draft/Approved status, and lets the owner edit and approve them
   - Lets the owner upload PDF manuals and photos, and add video links
@@ -177,12 +178,12 @@ Each technician request is saved in the D1 database **and** sent as a **WhatsApp
 | Part | Choice |
 |---|---|
 | Code repository | GitHub (private repo `inkfusion-help-chat`) |
-| Web app (frontend + backend) | Next.js (React), deployed to **Cloudflare Workers** using the OpenNext Cloudflare adapter |
+| Web app (frontend + backend) | **Cloudflare Workers** with Hono (server) and plain HTML/CSS/JS pages (no build step; fast on 3G). Changed from Next.js with owner approval on 7 Nov 2026. |
 | AI chat | **Claude API (Anthropic)** with a strict system prompt and retrieval over the knowledge base. The model name is a config setting. |
 | Database | **Cloudflare D1** (chats, technician requests, fix guides, stats) |
 | File storage | **Cloudflare R2** (PDFs, photos, uploaded videos) |
 | PDF search | **Cloudflare Vectorize** + Workers AI multilingual embeddings |
-| Admin login | **Cloudflare Access** |
+| Admin login | Admin password (`ADMIN_PASSWORD` secret), plus **Cloudflare Access** as an optional extra lock (see SETUP.md) |
 | Bot protection | **Cloudflare Turnstile** |
 | Owner alert | **WhatsApp Business Cloud API** |
 | Scheduled jobs | Cloudflare Cron Triggers (data clean-up) |

@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "inkfusion-help",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*", "/media/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "inkfusion-help-db",
+      // Replace with the ID shown in Cloudflare after creating the D1 database (see SETUP.md).
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "r2_buckets": [
+    { "binding": "FILES", "bucket_name": "inkfusion-help-files" }
+  ],
+  "triggers": {
+    // 02:00 Asia/Colombo every day: delete chats and photos older than RETENTION_MONTHS.
+    "crons": ["30 20 * * *"]
+  },
+  "vars": {
+    "CALL_NUMBER": "+94768680890",
+    "CALL_NUMBER_DISPLAY": "076 868 0890",
+    "ALERT_WHATSAPP_NUMBER": "94768680890",
+    "BUSINESS_DAYS": "1,2,3,4,5,6",
+    "BUSINESS_OPEN": "09:00",
+    "BUSINESS_CLOSE": "18:00",
+    "DAILY_AI_CAP_USD": "2",
+    "CLAUDE_MODEL": "claude-opus-5-5",
+    "PRICE_INPUT_PER_MTOK": "4",
+    "PRICE_OUTPUT_PER_MTOK": "20",
+    "AI_CALLS_PER_HOUR_PER_IP": "40",
+    "RETENTION_MONTHS": "24",
+    "WHATSAPP_API_VERSION": "v21.0",
+    "WHATSAPP_TEMPLATE_NAME": "",
+    "WHATSAPP_TEMPLATE_LANG": "en"
+  },
+  "observability": { "enabled": true }
+}

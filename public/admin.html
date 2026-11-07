@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>iNK Fusion Admin</title>
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    body { font-size: 16px; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px 40px; }
+    .top { border-radius: 0 0 16px 16px; }
+    nav.tabs { display: flex; gap: 6px; overflow-x: auto; padding: 12px 0; position: sticky; top: 0; background: var(--bg); z-index: 2; }
+    nav.tabs button { flex: none; min-height: 44px; padding: 8px 14px; border-radius: 999px; border: 2px solid var(--border); background: var(--surface); font-weight: 600; cursor: pointer; }
+    nav.tabs button[aria-selected="true"] { background: var(--brand); color: var(--brand-ink); border-color: var(--brand); }
+    section[hidden] { display: none; }
+    h2 { font-size: 20px; margin: 18px 0 8px; }
+    h3 { font-size: 17px; margin: 14px 0 6px; }
+    .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .card { margin-bottom: 10px; }
+    .item { display: flex; gap: 10px; align-items: center; justify-content: space-between; flex-wrap: wrap; padding: 12px 14px; background: var(--surface); border-radius: 12px; margin-bottom: 8px; box-shadow: var(--shadow); }
+    .item .main { flex: 1 1 260px; min-width: 0; }
+    .item .sub { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+    .pill { display: inline-block; font-size: 13px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); }
+    .pill.approved, .pill.done, .pill.sent { background: var(--ok-soft); color: var(--ok); }
+    .pill.draft, .pill.new, .pill.failed, .pill.not_configured { background: var(--warn-soft); color: var(--warn-ink); }
+    .btn.sm { min-height: 40px; padding: 6px 12px; flex: none; font-size: 15px; }
+    textarea.yaml { width: 100%; min-height: 420px; font: 14px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; border: 2px solid var(--border); border-radius: 12px; padding: 12px; background: var(--bg); color: var(--text); }
+    .msgbox { padding: 10px 14px; border-radius: 12px; margin: 8px 0; }
+    .msgbox.ok { background: var(--ok-soft); }
+    .msgbox.err { background: var(--warn-soft); color: var(--warn-ink); }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+    .stat { background: var(--surface); border-radius: 14px; padding: 14px; box-shadow: var(--shadow); }
+    .stat b { display: block; font-size: 28px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+    table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: 12px; overflow: hidden; }
+    th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); font-size: 15px; }
+    .table-wrap { overflow-x: auto; }
+    .transcript { max-height: 420px; overflow-y: auto; background: var(--bg); border-radius: 12px; padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+    .transcript .msg { max-width: 92%; font-size: 15px; }
+    .qr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .qr { background: #fff; color: #000; border-radius: 14px; padding: 16px; text-align: center; }
+    .qr .code { display: grid; place-items: center; margin: 10px 0; }
+    .qr small { word-break: break-all; color: #333; }
+    .hint { color: var(--muted); font-size: 14px; }
+    code { background: var(--brand-soft); padding: 1px 6px; border-radius: 6px; font-size: 14px; overflow-wrap: anywhere; }
+    @media print { nav.tabs, .top, .noprint { display: none !important; } .qr { break-inside: avoid; border: 1px solid #ccc; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="logo" aria-hidden="true">iN</div>
+    <h1>iNK Fusion Admin <small>Breakdown help</small></h1>
+    <button id="logoutBtn" class="call-top" hidden style="border:0;cursor:pointer">Log out</button>
+  </header>
+  <div class="wrap">
+    <section id="login" hidden>
+      <form class="card" id="loginForm" style="max-width:420px;margin:40px auto">
+        <strong>Admin login</strong>
+        <label for="pw">Password</label>
+        <input type="password" id="pw" autocomplete="current-password" required>
+        <div class="err" id="loginErr" role="alert"></div>
+        <button class="btn primary" type="submit">Log in</button>
+      </form>
+    </section>
+
+    <div id="app" hidden>
+      <div id="setupNotes"></div>
+      <nav class="tabs" role="tablist">
+        <button role="tab" data-tab="requests">🛠️ Requests</button>
+        <button role="tab" data-tab="guides">📘 Fix guides</button>
+        <button role="tab" data-tab="files">📁 Manuals &amp; media</button>
+        <button role="tab" data-tab="stats">📊 Stats</button>
+        <button role="tab" data-tab="qr">🔳 QR codes</button>
+      </nav>
+
+      <section id="tab-requests" hidden>
+        <div class="row"><h2 style="flex:1">Technician requests</h2>
+          <select id="reqFilter" class="btn sm ghost" aria-label="Filter"><option value="">All</option><option value="new">New</option><option value="contacted">Contacted</option><option value="done">Done</option></select>
+        </div>
+        <div id="reqList"></div>
+        <div id="reqDetail"></div>
+      </section>
+
+      <section id="tab-guides" hidden>
+        <div class="row"><h2 style="flex:1">Fix guides</h2>
+          <button class="btn sm" id="newGuideBtn">➕ New guide</button>
+          <label class="btn sm ghost" style="cursor:pointer">⬆️ Upload .yaml files<input type="file" id="guideUpload" accept=".yaml,.yml,text/yaml" multiple hidden></label>
+        </div>
+        <p class="hint">Only <b>approved</b> guides are used in the chat. A guide can't be approved while it still has <code>owner_check</code> questions.</p>
+        <div id="guideMsg"></div>
+        <div id="guideEditor"></div>
+        <div id="guideList"></div>
+      </section>
+
+      <section id="tab-files" hidden>
+        <h2>Manuals, photos and videos</h2>
+        <div class="card">
+          <strong>Upload a file</strong>
+          <p class="hint">PDF manuals and error-code sheets stay private (admin only). Photos and short videos can be shown to customers in a guide step. For long videos, upload to YouTube as <b>Unlisted</b> and add the link below.</p>
+          <input type="file" id="fileUpload" accept="application/pdf,image/jpeg,image/png,image/webp,video/mp4,video/webm" multiple>
+          <div id="fileMsg"></div>
+        </div>
+        <form class="card" id="linkForm">
+          <strong>Add a video link</strong>
+          <label for="linkName">Name</label><input type="text" id="linkName" placeholder="Nozzle check — DTF" required>
+          <label for="linkUrl">Link</label><input type="text" id="linkUrl" placeholder="https://youtu.be/..." required>
+          <button class="btn primary" type="submit">Add link</button>
+        </form>
+        <p class="hint">To show a photo or video in a guide step, copy its <b>media</b> value and paste it under that step in the guide, for example:<br><code>  - text: "Print a nozzle check."</code><br><code>    media: /media/public/media/…</code></p>
+        <div id="fileList"></div>
+      </section>
+
+      <section id="tab-stats" hidden>
+        <h2>Last 30 days</h2>
+        <div id="statsBox"></div>
+      </section>
+
+      <section id="tab-qr" hidden>
+        <div class="row"><h2 style="flex:1">QR codes for machine stickers</h2><button class="btn sm noprint" onclick="window.print()">🖨️ Print</button></div>
+        <p class="hint noprint">Each code opens the chat with the machine already chosen.</p>
+        <div class="qr-grid" id="qrGrid"></div>
+      </section>
+    </div>
+  </div>
+  <script src="/vendor/qrcode.js" defer></script>
+  <script src="/admin.js" defer></script>
+</body>
+</html>
