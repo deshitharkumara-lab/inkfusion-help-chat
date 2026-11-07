@@ -7,8 +7,10 @@ steps:
   - text: "Before refilling, shake the white ink bottle well. White ink settles quickly."
   - text: "Print a nozzle check and look at the white channel. Send a photo if you can."
   - text: "Run 1 normal head cleaning for the white channel, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
-  - text: "Still missing? Clean the capping station and wiper (see the head clogging video)."
-    media: capping-station-cleaning-dtf   # owner: add video link
+  - text: "Still missing? Clean the capping station and wiper. Use the software's move-carriage option to move the head aside. Never push the head by hand."
+  - text: "Wear gloves. Dip a clean foam swab in iNK Fusion cleaning solution or distilled water (battery top-up water — NEVER battery acid)."
+  - text: "Gently wipe the rubber edge of the capping station and the wiper blade. Do not touch the bottom of the print head."
+  - text: "Let the head go back to its home position (or use the software's 'home' option). Then print the nozzle check again."
   - text: "Run 1 power (strong) cleaning. Only do this once. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
@@ -21,5 +23,3 @@ prevention_tip: "Shake the white ink bottle before every refill, and keep white 
 status: draft
 owner_check:
   - "How does a customer check that white circulation is ON on your DTF models (light, menu, sound)?"
-  - "Which cleaning solution should customers use for the capping station and wiper? (Name it, or say 'iNK Fusion cleaning solution'.)"
-  - "Please send the capping station cleaning video (unlisted YouTube link) for this machine type."

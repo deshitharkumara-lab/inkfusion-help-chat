@@ -9,11 +9,10 @@ steps:
   - text: "Send us the readings and the temperature setting."
 max_attempts_before_escalation: 1
 escalate_if:
-  - "Difference of more than about 10°C from the setting"
+  - "Difference of more than 15°C from the setting"
   - "Corners much colder than the centre"
   - "Temperature keeps rising past the setting"
 prevention_tip: "Check the plate temperature with a thermometer once a month."
 status: draft
 owner_check:
-  - "What difference (°C) is acceptable before calling a technician? 10°C is a placeholder."
   - "Do you calibrate the controller for customers as a service?"

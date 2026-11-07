@@ -9,8 +9,10 @@ steps:
   - text: "Look at the pattern. Are any lines missing? Send a photo if you can."
   - text: "Check the ink tanks are full and the ink tubes have no big air gaps."
   - text: "Run 1 normal cleaning, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
-  - text: "Still missing? Clean the capping station and wiper. Use the panel's move-carriage option. Never push the head by hand. Watch the video first."
-    media: capping-station-cleaning-sublimation   # owner: add video link
+  - text: "Still missing? Clean the capping station and wiper. Use the panel's move-carriage option to move the head aside. Never push the head by hand."
+  - text: "Wear gloves. Dip a clean foam swab in iNK Fusion cleaning solution or distilled water (battery top-up water — NEVER battery acid)."
+  - text: "Gently wipe the rubber edge of the capping station and the wiper blade. Do not touch the bottom of the print head."
+  - text: "Let the head go back to its home position (or use the software's 'home' option). Then print the nozzle check again."
   - text: "Run 1 power (strong) cleaning. Only do this once. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
@@ -20,7 +22,5 @@ escalate_if:
   - "Head error code on the panel"
   - "Ink not reaching the head (empty tubes or dampers)"
 prevention_tip: "Print a nozzle check every morning and do not leave the printer switched off for days."
-status: draft
-owner_check:
-  - "Which cleaning solution should customers use for the capping station and wiper? (Name it, or say 'iNK Fusion cleaning solution'.)"
-  - "Please send the capping station cleaning video (unlisted YouTube link) for this machine type."
+status: approved
+owner_check: []
