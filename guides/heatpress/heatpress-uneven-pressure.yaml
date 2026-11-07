@@ -1,0 +1,18 @@
+id: heatpress-uneven-pressure
+machine: heatpress
+problem: Uneven pressure or uneven transfer
+safety: "The plate is hot. Keep hands clear when closing the press."
+steps:
+  - text: "Check the item is flat and centred under the plate. Remove seams, buttons or zips from under the transfer area."
+  - text: "Use a heat press pillow or pad if the item has seams."
+  - text: "Adjust the pressure knob to your normal setting."
+  - text: "Do a paper test: press a sheet of paper and check the scorch mark is even."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "The plate is bent or loose"
+  - "Pressure knob does not change pressure"
+  - "Paper test still very uneven"
+prevention_tip: "Always centre the item and use the same pressure setting for the same job."
+status: draft
+owner_check:
+  - "Is the paper scorch test OK for customers to do?"

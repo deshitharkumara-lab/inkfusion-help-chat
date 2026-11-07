@@ -1,0 +1,20 @@
+id: sublimation-colours-wrong
+machine: sublimation
+problem: Colours missing or wrong after pressing
+ask_first:
+  - "Which RIP software do you use?"
+  - "What material are you pressing onto?"
+safety: "The heat press is hot. Wear gloves when handling ink."
+steps:
+  - text: "Print a nozzle check. Is every colour there?"
+  - text: "In your RIP, check the correct ICC profile for your ink and paper is selected."
+  - text: "Check you are printing on the right side of the sublimation paper."
+  - text: "Check the material is polyester or polymer-coated. Cotton will not hold sublimation colours."
+  - text: "Check your heat press temperature and time. See the heat press guides if the colour is pale."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Colours still wrong with the correct profile, paper and settings"
+prevention_tip: "Keep the same ICC profile, paper and press settings for repeat jobs."
+status: draft
+owner_check:
+  - "Recommended press settings for your common items (fabric, mugs) — the agent will not quote numbers until you add them."

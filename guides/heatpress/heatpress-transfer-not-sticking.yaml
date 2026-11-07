@@ -1,0 +1,21 @@
+id: heatpress-transfer-not-sticking
+machine: heatpress
+problem: Transfer not sticking or fading
+ask_first:
+  - "What are you pressing? (DTF, sublimation, vinyl) And onto what item?"
+  - "What temperature, time and pressure are you using?"
+safety: "The plate is hot. Keep hands clear."
+steps:
+  - text: "Check the press really reaches the set temperature (see the temperature guide if not sure)."
+  - text: "Check you are using the recommended temperature, time and pressure for your transfer type."
+  - text: "Pre-press the item for a few seconds to remove moisture."
+  - text: "Sublimation: check the item is polyester or polymer-coated."
+  - text: "Press a test piece and check again."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "The press temperature is wrong"
+  - "Still not sticking with correct settings"
+prevention_tip: "Keep a written list of the settings that work for each item and transfer type."
+status: draft
+owner_check:
+  - "Please add your recommended settings per transfer type (DTF, sublimation fabric, mugs, caps). The agent will not quote numbers until you add them."

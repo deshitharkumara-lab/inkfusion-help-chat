@@ -1,0 +1,18 @@
+id: dtf-colours-wrong
+machine: dtf
+problem: Colours missing or wrong
+safety: "Wear gloves when handling ink."
+steps:
+  - text: "Print a nozzle check. Is every colour there (C, M, Y, K and White)?"
+  - text: "If a colour is missing, follow the head clogging fix."
+  - text: "Check each ink tank. Make sure no colour is empty and the right ink is in the right tank."
+  - text: "In your RIP software, check that the correct colour profile (ICC) for your film and ink is selected."
+  - text: "Print a small colour test again."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Wrong ink was filled in a tank"
+  - "Colours still wrong with a perfect nozzle check and the correct profile"
+prevention_tip: "Label your ink tanks and refill one colour at a time."
+status: draft
+owner_check:
+  - "Which ICC profile names do your customers use for DTF? Should the agent name them?"

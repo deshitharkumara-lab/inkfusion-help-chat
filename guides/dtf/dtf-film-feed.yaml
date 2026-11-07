@@ -1,0 +1,19 @@
+id: dtf-film-feed
+machine: dtf
+problem: Film feed problems (film not moving, skewed or jamming)
+safety: "Pause or stop the print before touching the film. Keep hands away from the moving head."
+steps:
+  - text: "Stop the print. Check the film roll is loaded straight and the coated (matte) side is facing up."
+  - text: "Check the pinch rollers are pressed down on the film."
+  - text: "Check the film is not touching or catching on anything along its path."
+  - text: "If you have a take-up roller, check it is switched on and the film is attached straight."
+  - text: "Do a short test print."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "The feed motor makes a grinding noise"
+  - "The film keeps jamming after reloading"
+  - "The head hits the film"
+prevention_tip: "Store film rolls flat in their bag, away from humidity, and load them straight every time."
+status: draft
+owner_check:
+  - "Which side of the film is coated on the film you sell, and how should customers check?"

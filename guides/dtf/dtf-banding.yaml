@@ -1,0 +1,20 @@
+id: dtf-banding
+machine: dtf
+problem: Lines or banding in prints
+safety: "Keep hands away from the moving print head."
+steps:
+  - text: "Print a nozzle check. If lines are missing, follow the head clogging fix first."
+  - text: "Check the film is lying flat and is not touching the print head."
+  - text: "In your RIP software, check the print mode / pass setting. Try a higher-quality mode (more passes)."
+  - text: "Print a small test again and compare."
+  - text: "Check the encoder strip (the clear plastic strip behind the head) for ink or dust. Do not touch or clean it yourself — just tell us if you see dirt."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Banding stays after a perfect nozzle check"
+  - "The encoder strip is dirty or damaged"
+  - "The head hits the film"
+prevention_tip: "Keep the film flat and stored in a dry place. Print a nozzle check before big jobs."
+status: draft
+owner_check:
+  - "Should customers clean the encoder strip themselves, or always call a technician?"
+  - "Which pass/quality setting do you recommend for your DTF models?"

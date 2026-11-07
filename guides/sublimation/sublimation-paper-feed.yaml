@@ -1,0 +1,17 @@
+id: sublimation-paper-feed
+machine: sublimation
+problem: Paper feed problems (skewing, wrinkling, not feeding)
+safety: "Pause the print before touching the paper. Keep hands away from the moving head."
+steps:
+  - text: "Stop the print. Check the paper roll is loaded straight and both ends are even."
+  - text: "Check all pinch rollers are down on the paper."
+  - text: "Check the take-up roller is on and the paper is taped straight."
+  - text: "Check the paper is not damp (damp paper wrinkles)."
+  - text: "Do a short test print."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Feed motor noise or the paper does not move at all"
+  - "Paper keeps skewing after reloading"
+prevention_tip: "Store paper rolls in their bag in a dry place."
+status: draft
+owner_check: []

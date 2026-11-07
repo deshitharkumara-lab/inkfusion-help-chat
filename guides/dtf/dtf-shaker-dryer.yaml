@@ -1,0 +1,19 @@
+id: dtf-shaker-dryer
+machine: dtf
+problem: Powder shaker / dryer not heating or not working
+safety: "The dryer is very hot. Do not touch the heating area. Never open the electrical box — call us instead."
+steps:
+  - text: "Check the shaker/dryer is plugged in and the power switch is ON."
+  - text: "Check the temperature setting on the control panel is correct."
+  - text: "Wait 10 minutes. Does the dryer warm up?"
+  - text: "Check the film is fed straight into the shaker and is not stuck."
+max_attempts_before_escalation: 1
+escalate_if:
+  - "No power at all"
+  - "Not heating after 10 minutes"
+  - "Burning smell, smoke or sparks — switch off and unplug straight away"
+  - "Belt or motor not moving"
+prevention_tip: "Clean loose powder from the shaker every day and keep the area dry."
+status: draft
+owner_check:
+  - "Recommended dryer temperature for your machines?"

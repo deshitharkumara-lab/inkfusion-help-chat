@@ -1,0 +1,20 @@
+id: epson-colours-wrong
+machine: epson
+problem: Colours missing or wrong
+ask_first:
+  - "Is your printer used for sublimation?"
+safety: "Wear gloves when handling ink."
+steps:
+  - text: "Print a nozzle check. Is every colour there?"
+  - text: "If a colour is missing, follow the head clogging fix."
+  - text: "Check each tank is filled with the right colour."
+  - text: "For sublimation: colours on paper look dull — that is normal. Check the colour after pressing."
+  - text: "For sublimation: check the correct ICC profile is selected in your print software."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Wrong ink filled in a tank"
+  - "Colours still wrong after pressing with the correct profile"
+prevention_tip: "Refill one colour at a time and check the bottle colour matches the tank."
+status: draft
+owner_check:
+  - "Which ICC profile do you supply for sublimation-converted Epsons?"

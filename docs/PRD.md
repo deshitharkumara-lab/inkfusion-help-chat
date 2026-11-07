@@ -1,13 +1,13 @@
-# PRD — iNK Fusion Breakdown Help Chat Agent (DRAFT v0.2)
+# PRD — iNK Fusion Breakdown Help Chat Agent (v1.0 — APPROVED)
 
 **Owner:** Deshitha Rathnakumara, Director, iNK Fusion Printing Technology (Pvt) Ltd, Maharagama, Sri Lanka
-**Status:** Draft for owner approval. This is a **TEST VERSION** (pilot), not the final public launch.
+**Status:** Approved by the owner on 7 Nov 2026. This is a **TEST VERSION** (pilot), not the final public launch.
 **Builder:** Claude Code
 **Code repository:** GitHub, private repo `inkfusion-help-chat`
 **Hosting:** Cloudflare
 **Date:** 7 Nov 2026
 
-### Changes from v0.1
+### Changes from v0.1 (v0.2, approved as v1.0)
 - Hosting moved from Vercel to **Cloudflare**. Database and storage moved from Supabase to **Cloudflare D1, R2 and Vectorize**.
 - Added **section 12.1, "Code & Deployment (GitHub + Cloudflare)"**.
 - Admin login now uses **Cloudflare Access** instead of a home-made password.
@@ -240,4 +240,4 @@ Each technician request is saved in the D1 database **and** sent as a **WhatsApp
 - Data retention: chat logs and photos are deleted after **24 months**.
 - Account owner (Cloudflare, Anthropic, Meta): **deshitharkumara@gmail.com**
 
-**No open questions.** Ready for owner approval.
+**No open questions.** Approved as v1.0.

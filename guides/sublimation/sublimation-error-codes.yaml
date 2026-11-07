@@ -1,0 +1,19 @@
+id: sublimation-error-codes
+machine: sublimation
+problem: Error lights and codes (large-format)
+ask_first:
+  - "What error code or message is on the panel or PC? Please send a photo."
+safety: "Do not open covers or the electronics. Switch off before clearing any paper jam."
+steps:
+  - text: "Write down or photograph the error code."
+  - text: "Check the paper is loaded and there is no jam."
+  - text: "Switch the printer off, wait 30 seconds, and switch it on again."
+  - text: "Does the error come back?"
+max_attempts_before_escalation: 1
+escalate_if:
+  - "The error comes back after restarting"
+  - "Any head, voltage or mainboard error"
+prevention_tip: "Note down error codes when they appear — it helps our technicians fix the problem faster."
+status: draft
+owner_check:
+  - "Please share the error code sheets for your large-format models so the agent can explain common codes."

@@ -1,0 +1,20 @@
+id: heatpress-not-heating
+machine: heatpress
+problem: Not heating, or heating slowly
+safety: "The plate may be hot even if the display is off. Never open the control box or touch wiring — call us instead."
+steps:
+  - text: "Check the plug is firmly in the socket and the power switch is ON."
+  - text: "Test the wall socket with another device, like a phone charger."
+  - text: "Check the temperature is set higher than the room temperature, and the display is on."
+  - text: "Wait 10 minutes. Is the temperature rising on the display?"
+max_attempts_before_escalation: 1
+escalate_if:
+  - "No power at all"
+  - "Display on but temperature not rising"
+  - "Burning smell, smoke or sparks — switch off and unplug straight away"
+  - "Takes much longer to heat than before"
+prevention_tip: "Plug the heat press straight into a wall socket. Do not use a thin extension cord or a multi-plug."
+status: draft
+owner_check:
+  - "Should customers check or replace an external fuse (if the model has one), or always call a technician?"
+  - "Normal heat-up time for your presses, so the agent knows what 'slow' means?"

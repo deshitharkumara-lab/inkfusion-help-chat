@@ -1,0 +1,20 @@
+id: pc-printer-not-detected
+machine: [dtf, epson, sublimation]
+problem: Printer not detected by the PC (USB / network)
+ask_first:
+  - "Is the printer connected by USB or network cable?"
+safety: "Switch the printer off before unplugging or plugging in cables."
+steps:
+  - text: "Check the printer is on and the cable is plugged in at both ends."
+  - text: "USB: try a different USB port directly on the computer. Avoid USB hubs."
+  - text: "USB: try a different USB cable if you have one."
+  - text: "Network: check the network cable lights are blinking at the printer and the router/PC."
+  - text: "Restart the printer, then restart the computer."
+max_attempts_before_escalation: 1
+escalate_if:
+  - "Still not detected with another cable and port"
+  - "The network IP settings need to be changed"
+prevention_tip: "Use a good-quality, short USB cable and keep it out of the way so it doesn't get pulled."
+status: draft
+owner_check:
+  - "Should the agent help customers check the printer's IP address, or leave network setup to technicians?"

@@ -1,0 +1,19 @@
+id: sublimation-banding
+machine: sublimation
+problem: Lines or banding in prints (large-format)
+safety: "Keep hands away from the moving head and the paper path."
+steps:
+  - text: "Print a nozzle check. If lines are missing, follow the head clogging fix first."
+  - text: "Check the paper is flat and the take-up roller is working."
+  - text: "Run the paper feed calibration (step calibration) from the panel or software."
+  - text: "Check your RIP print mode. Try a higher pass / quality setting."
+  - text: "Print a small test and compare."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Banding stays after nozzle check and calibration"
+  - "Head hitting the paper"
+  - "Encoder strip is dirty"
+prevention_tip: "Run step calibration whenever you change paper type."
+status: draft
+owner_check:
+  - "What is the menu name for step / feed calibration on your large-format models?"

@@ -1,0 +1,22 @@
+id: dtf-transfer-peeling
+machine: dtf
+problem: Transfer peeling or cracking after pressing
+ask_first:
+  - "What fabric are you pressing on?"
+  - "Is your film hot-peel or cold-peel?"
+safety: "The heat press is hot. Keep hands clear of the plates."
+steps:
+  - text: "Check the powder was fully cured in the dryer. It should look smooth and glossy, not powdery."
+  - text: "Pre-press the garment for a few seconds to remove moisture."
+  - text: "Check your heat press settings: temperature, time and pressure. Use the settings iNK Fusion recommends for your film."
+  - text: "Peel the film the right way: hot-peel films right away, cold-peel films only after cooling completely."
+  - text: "Press again with a cover sheet for a few seconds after peeling."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "The heat press temperature seems wrong (see the heat press guides)"
+  - "Peeling continues with correct settings"
+prevention_tip: "Always pre-press the garment, and follow the film's hot-peel or cold-peel instruction."
+status: draft
+owner_check:
+  - "Please give the recommended press settings for your DTF film (temperature, time, pressure). The agent will not quote numbers until you add them."
+  - "Recommended curing temperature and time for your dryer?"

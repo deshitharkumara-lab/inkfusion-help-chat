@@ -1,0 +1,21 @@
+id: software-rip-wont-open
+machine: [dtf, epson, sublimation]
+problem: RIP or print software won't open
+ask_first:
+  - "Which software do you use? (Maintop, PrintExp, RIIN, Wasatch SoftRIP, SAi Flexi)"
+  - "Do you see an error message? Please send a photo of the screen."
+safety: "Do not uninstall the software or delete licence files — this can lose your licence."
+steps:
+  - text: "Close the software fully. Then restart the computer."
+  - text: "Make sure the licence dongle (USB key) is plugged in, if your software uses one."
+  - text: "Right-click the software icon and choose 'Run as administrator'."
+  - text: "Check that antivirus software has not blocked or removed the program. If it has, please tell us — do not change antivirus settings unless you know how."
+max_attempts_before_escalation: 1
+escalate_if:
+  - "Licence or activation error"
+  - "Software was removed or files are missing"
+  - "Error message stays after restarting"
+prevention_tip: "Do not install Windows updates in the middle of a print job, and keep a note of your licence details in a safe place."
+status: draft
+owner_check:
+  - "Any software-specific tips for Maintop, PrintExp, RIIN, Wasatch or Flexi that customers can safely do?"

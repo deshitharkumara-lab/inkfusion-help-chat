@@ -1,0 +1,20 @@
+id: software-printer-not-found
+machine: [dtf, epson, sublimation]
+problem: RIP software can't find the printer
+ask_first:
+  - "Which software do you use?"
+  - "Is the printer connected by USB or network cable?"
+safety: "Switch the printer off before unplugging or plugging in cables."
+steps:
+  - text: "Check the printer is switched on and shows no error."
+  - text: "Check the USB or network cable is firmly plugged in at both ends."
+  - text: "In the software, check the correct printer and port are selected."
+  - text: "Close the software, restart the printer, then restart the computer. Open the software again."
+max_attempts_before_escalation: 1
+escalate_if:
+  - "Still not found after restarting"
+  - "The printer shows an error"
+prevention_tip: "Use the same USB port every time and avoid long or cheap USB cables."
+status: draft
+owner_check:
+  - "Where is the printer/port setting in each software? The agent can name the menu if you add it."

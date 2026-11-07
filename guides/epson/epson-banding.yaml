@@ -1,0 +1,15 @@
+id: epson-banding
+machine: epson
+problem: Lines or banding in prints
+safety: "Keep hands out of the printer while it is printing."
+steps:
+  - text: "Print a nozzle check. If lines are missing, follow the head clogging fix first."
+  - text: "Run Print Head Alignment (Maintenance > Print Head Alignment)."
+  - text: "Check the paper type in the print settings matches the paper you are using."
+  - text: "Try printing in a higher quality setting."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Banding stays after a perfect nozzle check and alignment"
+prevention_tip: "Use the correct paper type setting and keep paper dry and flat."
+status: draft
+owner_check: []

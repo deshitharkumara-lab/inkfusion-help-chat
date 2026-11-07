@@ -1,0 +1,20 @@
+id: epson-error-lights
+machine: epson
+problem: Error lights and messages
+ask_first:
+  - "Which lights are on or blinking? Or what does the screen/PC message say? A photo helps."
+safety: "Do not open the printer cover screws or reset the printer with unofficial software."
+steps:
+  - text: "Paper light blinking: reload the paper and press the paper button."
+  - text: "Ink light on: check that every ink tank has ink, and refill if needed."
+  - text: "Switch the printer off, wait 30 seconds, and switch it on again."
+  - text: "Did the light go off?"
+max_attempts_before_escalation: 1
+escalate_if:
+  - "All lights blinking together"
+  - "Message: 'parts inside your printer are at the end of their service life' or 'ink pad' (waste ink pad full)"
+  - "Any error that stays after restarting"
+prevention_tip: "Avoid extra head cleanings — each one fills the waste ink pad."
+status: draft
+owner_check:
+  - "Do you reset waste ink pad counters for customers as a paid service? (The agent will never tell customers to do it themselves.)"

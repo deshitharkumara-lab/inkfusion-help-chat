@@ -1,0 +1,18 @@
+id: epson-paper-feed
+machine: epson
+problem: Paper feed problems (not feeding, jamming, skewed)
+safety: "Switch the printer off before removing jammed paper. Pull paper out gently. Never force it."
+steps:
+  - text: "If paper is jammed, switch off the printer and gently pull the paper out in the direction it feeds."
+  - text: "Fan the paper stack and load fewer sheets (about 20)."
+  - text: "Slide the edge guides so they touch the paper lightly."
+  - text: "Check the paper is not curled, damp or too thick for the printer."
+  - text: "Switch on and print a test page."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "Paper torn and stuck inside"
+  - "Grinding noise"
+  - "Paper never picks up"
+prevention_tip: "Keep paper in its pack in a dry place, and don't overfill the tray."
+status: draft
+owner_check: []

@@ -1,0 +1,18 @@
+id: dtf-powder-not-sticking
+machine: dtf
+problem: Powder not sticking to the print
+safety: "Wear a dust mask when handling powder. The dryer is hot — do not touch it."
+steps:
+  - text: "Check you are printing on the coated (matte) side of the film."
+  - text: "Check the white layer is printing. Powder sticks to the wet white ink."
+  - text: "Check the powder is dry and free-flowing. Damp powder forms lumps and does not stick well."
+  - text: "Check the shaker spreads powder over the whole print, and the print is still wet when the powder lands."
+  - text: "Print a small test and check again."
+max_attempts_before_escalation: 2
+escalate_if:
+  - "The shaker is not working"
+  - "Powder still does not stick with fresh powder and good white"
+prevention_tip: "Keep powder in a sealed container in a dry place. Close the bag after use."
+status: draft
+owner_check:
+  - "Any other common causes you see with your powder (for example ink amount settings)?"

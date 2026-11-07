@@ -1,0 +1,20 @@
+id: software-dongle-not-detected
+machine: [dtf, epson, sublimation]
+problem: Licence / dongle not detected
+ask_first:
+  - "Which software do you use? (Maintop, PrintExp, RIIN, Wasatch SoftRIP, SAi Flexi)"
+safety: "Do not try to copy, reset or 'crack' the licence. This can permanently disable it."
+steps:
+  - text: "Unplug the dongle and plug it into a different USB port directly on the computer (not a USB hub)."
+  - text: "Check that the light on the dongle turns on, if it has one."
+  - text: "Restart the computer with the dongle plugged in."
+  - text: "Open the software again."
+max_attempts_before_escalation: 1
+escalate_if:
+  - "The dongle light does not turn on"
+  - "Still not detected after restarting"
+  - "The dongle is lost or damaged"
+prevention_tip: "Keep the dongle plugged directly into the computer and do not remove it while the software is open."
+status: draft
+owner_check:
+  - "Should customers reinstall the dongle driver (for example Sentinel/HASP) themselves? If yes, which driver for each software?"
