@@ -6,13 +6,12 @@ steps:
   - text: "Let the press reach the set temperature and wait 5 more minutes."
   - text: "If you have a surface or infrared thermometer, measure the centre of the plate."
   - text: "Measure the 4 corners too. Write down all the readings."
-  - text: "Send us the readings and the temperature setting."
+  - text: "Send us the readings and the temperature setting. If the difference is more than 15°C, our technician can check and calibrate your press."
 max_attempts_before_escalation: 1
 escalate_if:
   - "Difference of more than 15°C from the setting"
   - "Corners much colder than the centre"
   - "Temperature keeps rising past the setting"
 prevention_tip: "Check the plate temperature with a thermometer once a month."
-status: draft
-owner_check:
-  - "Do you calibrate the controller for customers as a service?"
+status: approved
+owner_check: []

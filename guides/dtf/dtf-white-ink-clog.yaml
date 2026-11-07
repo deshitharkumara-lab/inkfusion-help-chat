@@ -3,7 +3,7 @@ machine: dtf
 problem: White ink clogging / weak or missing white layer
 safety: "Keep the printer ON. Wear gloves. Do not open the ink lines or the head."
 steps:
-  - text: "Check that white ink circulation is switched ON on the printer."
+  - text: "Check that white ink circulation is ON: look at the white ink tube — the ink should be moving — or listen for a soft pump sound."
   - text: "Before refilling, shake the white ink bottle well. White ink settles quickly."
   - text: "Print a nozzle check and look at the white channel. Send a photo if you can."
   - text: "Run 1 normal head cleaning for the white channel, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
@@ -20,6 +20,5 @@ escalate_if:
   - "Ink is leaking"
   - "A head error code is shown"
 prevention_tip: "Shake the white ink bottle before every refill, and keep white circulation switched on, even when the printer is not in use."
-status: draft
-owner_check:
-  - "How does a customer check that white circulation is ON on your DTF models (light, menu, sound)?"
+status: approved
+owner_check: []

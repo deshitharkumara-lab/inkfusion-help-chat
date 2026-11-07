@@ -10,11 +10,7 @@ steps:
   - text: "Look at the pattern. Are any lines missing? Send a photo if you can."
   - text: "Check all ink tanks have ink above the lower line."
   - text: "Run 1 Head Cleaning. Wait 5 minutes, then print the nozzle check again. (Repeat up to 3 normal cleanings in total.)"
-  - text: "Still missing? Clean the capping station and wiper. Move the head aside the way iNK Fusion showed you. Never push the head by hand."
-  - text: "Wear gloves. Dip a clean foam swab in iNK Fusion cleaning solution or distilled water (battery top-up water — NEVER battery acid)."
-  - text: "Gently wipe the rubber edge of the capping station and the wiper blade. Do not touch the bottom of the print head."
-  - text: "Let the head go back to its home position (or use the software's 'home' option). Then print the nozzle check again."
-  - text: "If your model has Power Cleaning, run it once only. Then print the nozzle check again."
+  - text: "Still missing? If your model has Power Cleaning, run it once only. Then print the nozzle check again."
 max_attempts_before_escalation: 3
 escalate_if:
   - "Still missing after the power/strong cleaning"
@@ -22,6 +18,5 @@ escalate_if:
   - "Message about 'ink pad' or 'parts at end of service life'"
   - "Ink leaking inside the printer"
 prevention_tip: "Print at least one page or a nozzle check every 2–3 days. Sublimation ink dries faster, so print daily."
-status: draft
-owner_check:
-  - "How does a customer safely move the head aside on your Epson models to reach the capping station? (Many Epson heads are locked in place.) If it is not easy, should Epson customers skip capping cleaning?"
+status: approved
+owner_check: []

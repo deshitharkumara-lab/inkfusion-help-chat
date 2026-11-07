@@ -16,8 +16,7 @@ escalate_if:
   - "No outside fuse holder — never open the control box"
   - "Display on but temperature not rising"
   - "Burning smell, smoke or sparks — switch off and unplug straight away"
-  - "Takes much longer to heat than before"
+  - "Not at the set temperature after 50 minutes (normal is about 40 minutes to reach 180°C)"
 prevention_tip: "Plug the heat press straight into a wall socket. Do not use a thin extension cord or a multi-plug."
-status: draft
-owner_check:
-  - "Normal heat-up time for your presses, so the agent knows what 'slow' means?"
+status: approved
+owner_check: []
