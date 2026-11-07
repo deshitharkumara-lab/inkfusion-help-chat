@@ -6,7 +6,7 @@ ask_first:
   - "Is your film hot-peel or cold-peel?"
 safety: "The heat press is hot. Keep hands clear of the plates."
 steps:
-  - text: "Check the powder was fully cured in the dryer. It should look smooth and glossy, not powdery."
+  - text: "Check the powder was fully cured in the dryer at 120°C. It should look smooth and glossy, not powdery."
   - text: "Pre-press the garment for a few seconds to remove moisture."
   - text: "Check your heat press settings. iNK Fusion recommends 160°C for 10 seconds for DTF transfers."
   - text: "Peel the film the right way: hot-peel films right away, cold-peel films only after cooling completely."
@@ -16,6 +16,5 @@ escalate_if:
   - "The heat press temperature seems wrong (see the heat press guides)"
   - "Peeling continues with correct settings"
 prevention_tip: "Always pre-press the garment, and follow the film's hot-peel or cold-peel instruction."
-status: draft
-owner_check:
-  - "Recommended curing temperature and time for your dryer?"
+status: approved
+owner_check: []

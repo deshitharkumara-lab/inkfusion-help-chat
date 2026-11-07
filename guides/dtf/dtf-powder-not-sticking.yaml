@@ -3,7 +3,7 @@ machine: dtf
 problem: Powder not sticking to the print
 safety: "Wear a dust mask when handling powder. The dryer is hot — do not touch it."
 steps:
-  - text: "Check you are printing on the coated (matte) side of the film."
+  - text: "Check you are printing on the coated side of the film. Not sure which side? Scratch a corner gently with your fingernail — the coated side leaves a mark."
   - text: "Check the white layer is printing. Powder sticks to the wet white ink."
   - text: "Check the powder is dry and free-flowing. Damp powder forms lumps and does not stick well."
   - text: "Check the shaker spreads powder over the whole print, and the print is still wet when the powder lands."

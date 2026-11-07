@@ -7,14 +7,16 @@ steps:
   - text: "Check the film is lying flat and is not touching the print head."
   - text: "In your RIP software, check the print mode / pass setting. Try a higher-quality mode (more passes)."
   - text: "Print a small test again and compare."
-  - text: "Check the encoder strip (the clear plastic strip behind the head) for ink or dust. Do not touch or clean it yourself — just tell us if you see dirt."
+  - text: "Look at the encoder strip (the clear plastic strip behind the head). Is there ink or dust on it?"
+  - text: "If it is dirty: switch the printer OFF and unplug it. Lightly dampen a lint-free cloth with distilled water. No chemicals."
+  - text: "Gently wipe the strip from one end to the other. Do not bend, pull or remove it. Let it dry fully, then switch the printer on and print a test."
 max_attempts_before_escalation: 2
 escalate_if:
   - "Banding stays after a perfect nozzle check"
-  - "The encoder strip is dirty or damaged"
+  - "The encoder strip is scratched, bent or damaged"
+  - "Banding stays after cleaning the encoder strip"
   - "The head hits the film"
 prevention_tip: "Keep the film flat and stored in a dry place. Print a nozzle check before big jobs."
 status: draft
 owner_check:
-  - "Should customers clean the encoder strip themselves, or always call a technician?"
   - "Which pass/quality setting do you recommend for your DTF models?"
