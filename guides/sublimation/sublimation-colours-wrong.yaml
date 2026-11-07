@@ -10,11 +10,10 @@ steps:
   - text: "In your RIP, check the correct ICC profile for your ink and paper is selected."
   - text: "Check you are printing on the right side of the sublimation paper."
   - text: "Check the material is polyester or polymer-coated. Cotton will not hold sublimation colours."
-  - text: "Check your heat press temperature and time. See the heat press guides if the colour is pale."
+  - text: "Check your heat press settings. For fabric, iNK Fusion recommends 210°C for 45 seconds. For mugs or other items, please contact iNK Fusion. If colours are pale, also see the heat press temperature guide."
 max_attempts_before_escalation: 2
 escalate_if:
   - "Colours still wrong with the correct profile, paper and settings"
 prevention_tip: "Keep the same ICC profile, paper and press settings for repeat jobs."
-status: draft
-owner_check:
-  - "Recommended press settings for your common items (fabric, mugs) — the agent will not quote numbers until you add them."
+status: approved
+owner_check: []

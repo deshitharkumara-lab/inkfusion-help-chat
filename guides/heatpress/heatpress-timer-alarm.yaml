@@ -1,17 +1,18 @@
 id: heatpress-timer-alarm
 machine: heatpress
 problem: Timer or alarm not working
+ask_first:
+  - "Does your press timer start by itself when you close it, or do you press a start button?"
 safety: "The plate is hot. Do not open the control box."
 steps:
   - text: "Check the time setting on the controller is not 0."
   - text: "Switch the press off, wait 1 minute, and switch it on again."
-  - text: "Set a short time, like 10 seconds, and close the press. Does the timer start counting?"
+  - text: "Set a short time, like 10 seconds, and close the press. If your model has a start button, press it. Does the timer start counting?"
 max_attempts_before_escalation: 1
 escalate_if:
   - "Timer does not start when the press is closed"
   - "No alarm sound"
   - "Controller buttons don't respond"
 prevention_tip: "Keep the controller dry and away from steam."
-status: draft
-owner_check:
-  - "On your models, does the timer start automatically when closed, or with a button? Is there a mute setting for the alarm?"
+status: approved
+owner_check: []

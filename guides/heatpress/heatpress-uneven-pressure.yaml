@@ -13,6 +13,5 @@ escalate_if:
   - "Pressure knob does not change pressure"
   - "Paper test still very uneven"
 prevention_tip: "Always centre the item and use the same pressure setting for the same job."
-status: draft
-owner_check:
-  - "Is the paper scorch test OK for customers to do?"
+status: approved
+owner_check: []

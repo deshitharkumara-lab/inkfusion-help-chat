@@ -7,7 +7,7 @@ ask_first:
 safety: "The plate is hot. Keep hands clear."
 steps:
   - text: "Check the press really reaches the set temperature (see the temperature guide if not sure)."
-  - text: "Check you are using the recommended temperature, time and pressure for your transfer type."
+  - text: "Check your settings. iNK Fusion recommends: DTF 160°C for 10 seconds; sublimation on fabric 210°C for 45 seconds. For mugs, caps or other items, please contact iNK Fusion for settings."
   - text: "Pre-press the item for a few seconds to remove moisture."
   - text: "Sublimation: check the item is polyester or polymer-coated."
   - text: "Press a test piece and check again."
@@ -16,6 +16,5 @@ escalate_if:
   - "The press temperature is wrong"
   - "Still not sticking with correct settings"
 prevention_tip: "Keep a written list of the settings that work for each item and transfer type."
-status: draft
-owner_check:
-  - "Please add your recommended settings per transfer type (DTF, sublimation fabric, mugs, caps). The agent will not quote numbers until you add them."
+status: approved
+owner_check: []
